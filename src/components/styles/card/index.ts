@@ -6,8 +6,6 @@ export const Card = styled.div`
 		border-radius: 1rem;
 		display: flex;
 		flex-direction: column;
-		flex: 1;
-		max-height: fit-content;
 		padding: 1rem;
 	`}
 `
