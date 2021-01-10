@@ -2,8 +2,11 @@ import React, { FC, Children } from 'react'
 import { Container, Row } from './styles'
 import Block from './block'
 
+import { createFullGrid } from 'utils'
+
 const Grid: FC = () => {
-	// other stuff
+	const grid = createFullGrid()
+
 	return (
 		<Container data-cy='grid-container'>
 			{Children.toArray(
