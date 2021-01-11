@@ -7,7 +7,7 @@ import { copyGrid, getRandomIndex, solveGrid } from 'utils'
  * @param grid 9x9 Sudoku Grid
  * @param attempts nmber of attempts to solve (higher means more difficult)
  */
-function removeNumbers(grid: GRID, attempts: 5): GRID {
+function removeNumbers(grid: GRID, attempts = 5): GRID {
 	while (attempts > 0) {
 		let row = getRandomIndex()
 		let col = getRandomIndex()

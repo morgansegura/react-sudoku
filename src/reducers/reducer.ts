@@ -12,7 +12,7 @@ function reducer(state = initialState, action: AnyAction) {
 		case types.CREATE_GRID: {
 			const solveGrid = createFullGrid()
 			const gridCopy = copyGrid(solveGrid)
-			const challengeGrid = removeNumbers(gridCopy, 5)
+			const challengeGrid = removeNumbers(gridCopy)
 			return {
 				...state,
 				grid: challengeGrid,
