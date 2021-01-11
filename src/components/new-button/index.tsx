@@ -4,7 +4,6 @@ import { Action, Dispatch } from 'redux'
 
 import { Button } from 'components'
 import { createGrid } from 'reducers'
-import identifyWorkingSquare from 'utils/identify-square'
 
 const NewButton: FC = () => {
 	const dispatch = useDispatch<Dispatch<Action>>()
