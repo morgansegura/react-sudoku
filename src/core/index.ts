@@ -1,3 +1,2 @@
-import reportWebVitals from "./report-web-vitals";
-
-export {reportWebVitals}
+export { default as configureStore } from './configure-store'
+export * from './service-worker'
