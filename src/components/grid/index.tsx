@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Dispatch, AnyAction } from 'redux'
 
 import { createGrid, IReducer, selectBlock, fillBlock } from 'reducers'
-import { INDEX, BLOCK_COORDS, N, NUMBERS } from 'typings'
+import { INDEX, BLOCK_COORDS, GRID, N, NUMBERS } from 'typings'
 
 import Block from './block'
 import { Container, Row } from './styles'
@@ -12,6 +12,7 @@ import { Container, Row } from './styles'
 interface IState {
 	selectedBlock: BLOCK_COORDS
 	selectedValue: N
+	solvedGrid?: GRID
 }
 
 const Grid: FC = () => {
@@ -27,8 +28,8 @@ const Grid: FC = () => {
 	const dispatch = useDispatch<Dispatch<AnyAction>>()
 	const create = useCallback(() => dispatch(createGrid()), [dispatch])
 	useEffect(() => {
-		create()
-	}, [create])
+		if (state.solvedGrid) create()
+	}, [create, state.solvedGrid])
 
 	const fill = useCallback(
 		(n: NUMBERS) => {
